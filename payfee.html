@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        .sidebar h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .content {
+            flex: 4;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 0;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html/#contact">Contact Us</a></li>
+                <li><a href="index.html/#about">about us</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Pay Monthly Fee</h1>
+            <form action="YOUR_PAYPAL_PROCESSING_URL" method="post">
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="amount">Amount (USD):</label><br>
+                <input type="number" id="amount" name="amount" min="1" step="any" required><br>
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="YOUR_PAYPAL_BUSINESS_EMAIL">
+                <input type="submit" value="Pay Now">
+            </form>
+        </div>
+    </div>
+    <footer style="text-align: center; margin-top: 20px;">
+        <p>&copy; BEHKY School 2024. All rights reserved.</p>
+    </footer>
+</body>
+</html>
